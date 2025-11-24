@@ -4,7 +4,7 @@
             <div class="footer-col">
                 <div class="footer-logo">
                     <i class="fas fa-shield-alt"></i>
-                    <span>GlobalFines</span>
+                    <span>DP Fines</span>
                 </div>
                 <p>The most comprehensive database of global privacy and data protection enforcement actions.</p>
             </div>
@@ -16,7 +16,7 @@
                     <li><a href="about.php">About</a></li>
                     <li><a href="database.php">Fines Database</a></li>
                     <li><a href="dashboards.php">Dashboards</a></li>
-                    <li><a href="https://github.com/yourusername/globalfines" target="_blank">Join the Project</a></li>
+                    <li><a href="https://github.com/dpfines/dpfines-app" target="_blank">Join the Project</a></li>
                 </ul>
             </div>
 
@@ -41,11 +41,10 @@
 
         <div class="footer-bottom">
             <div class="footer-info">
-                <p>&copy; <?php echo date('Y'); ?> GlobalFines. All rights reserved. A community-driven open project.</p>
+                <p>&copy; <?php echo date('Y'); ?> Data Protection Fines (DP Fines). All rights reserved. A community-driven open project.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/yourusername/globalfines" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/dpfines/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -53,10 +52,11 @@
         <!-- Donation Section -->
         <div class="donation-section">
             <h4>Support This Project</h4>
-            <p>Help us maintain and improve GlobalFines. Your donations support server costs, data updates, and development.</p>
+            <p>Help us maintain and improve DP Fines. Your donations support server costs, data updates, and development.</p>
             <a href="https://donate.stripe.com/test_yourlink" target="_blank" rel="noopener noreferrer" class="btn btn-donate">
                 <i class="fab fa-stripe"></i> Donate via Stripe
             </a>
         </div>
     </div>
 </footer>
+
