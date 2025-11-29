@@ -1,0 +1,50 @@
+/* Dashboard page styles extracted from blade */
+/* Expandable panels: responsive and animated */
+.expandable-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-block-end:0.5rem;
+    gap:0.75rem;
+}
+.expand-controls{display:flex;gap:.5rem}
+.expand-toggle{background:#fff;border:1px solid #ddd;padding:6px 10px;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px}
+.expand-toggle i{transition:transform .25s ease;color:#333}
+.expandable-body{overflow:hidden;transition:max-height .35s ease, opacity .3s ease, transform .3s ease;opacity:1;transform:none}
+.expandable-body.collapsed{max-height:0;max-block-size:0;opacity:0;transform:translateY(-8px);padding-block-start:0;padding-block-end:0;padding-top:0;padding-bottom:0}
+
+/* Responsive grid tweaks */
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.dashboard-grid{display:grid;grid-template-columns:1fr 360px;gap:1.25rem}
+.charts-two-column{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.chart-bars-extended{display:block}
+.bar-item-extended{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.75rem}
+.bar-info{display:flex;justify-content:space-between;align-items:center}
+.bar-bg{background:#f1f5f9;border-radius:6px;height:14px;overflow:hidden}
+.bar-fill{height:100%;background:#3b82f6;display:block}
+.bar-fill-purple{background:#7c3aed}
+.bar-fill-indigo{background:#5b21b6}
+.bar-fill-green{background:#10b981}
+.bar-fill-teal{background:#14b8a6}
+.stat-count{margin-right:.5rem}
+.stat-amount{font-weight:600}
+
+@media (max-width:900px){
+    .dashboard-grid{grid-template-columns:1fr}
+    .charts-two-column{grid-template-columns:1fr}
+    .metric-card{padding:0.75rem}
+}
+
+/* small helper to use css custom property for fill if provided */
+.bar-fill{width:var(--fill,100%)}
+
+/* Per-section download button */
+.section-tools{display:flex;align-items:center;gap:.5rem}
+.section-download{background:transparent;border:none;color:var(--gray-700);cursor:pointer;padding:.35rem .5rem;border-radius:6px;font-size:0.95rem;display:inline-flex;align-items:center;gap:.5rem}
+.section-download i{font-size:0.95rem}
+.section-download:hover{background:rgba(0,0,0,0.03)}
+.section-download.loading{opacity:.6;pointer-events:none}
+
+@media (max-width:768px){
+    .section-tools{justify-content:flex-end}
+}

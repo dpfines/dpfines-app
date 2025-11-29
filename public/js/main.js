@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Animate bars on page load
     animateBars();
+    // Initialize reveal-on-scroll animations
+    initRevealOnScroll();
+    // Initialize policy section toggles
+    initPolicySections();
 });
 
 // Animate chart bars
@@ -77,3 +81,76 @@ if (searchForm) {
         // Add clear functionality if needed
     }
 }
+
+// Simple intersection-observer based reveal for elements with .reveal-on-scroll
+function initRevealOnScroll(){
+    const els = document.querySelectorAll('.reveal-on-scroll');
+    if(!els || !('IntersectionObserver' in window)){
+        // fallback: just reveal immediately
+        els.forEach(e => e.classList.add('revealed'));
+        return;
+    }
+    const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('revealed');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+    els.forEach(el => io.observe(el));
+}
+
+// Initialize collapsible policy sections
+function initPolicySections(){
+    document.querySelectorAll('.policy-section-header').forEach(function(header){
+        header.addEventListener('click', function(e){
+            e.preventDefault();
+            const section = this.closest('.policy-section');
+            if(section){ section.classList.toggle('collapsed'); }
+        });
+    });
+}
+
+// Newsletter AJAX submit
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById('footer-newsletter-form');
+    const successBox = document.getElementById('footer-success');
+    const errorBox = document.getElementById('footer-error');
+
+    if (form) {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault(); // Stop normal form submission
+
+            successBox.style.display = "none";
+            errorBox.style.display = "none";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    successBox.style.display = "block";
+                    successBox.textContent = "✔ You are subscribed! Check your inbox.";
+                    form.reset();
+                } else {
+                    errorBox.style.display = "block";
+                    errorBox.textContent = data.message || "Something went wrong.";
+                }
+            } catch (error) {
+                errorBox.style.display = "block";
+                errorBox.textContent = "Network error, please try again.";
+            }
+        });
+    }
+});
+

@@ -6,26 +6,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- ABOUT HEADER -->
-<section class="about-hero">
+
+
+
+<section class="hero">
     <div class="container">
-        <div class="about-hero-content">
-            <h1>About DP Fines</h1>
-            <p>Making global data protection enforcement transparent and accessible to everyone</p>
+    <div class="hero-content reveal-on-scroll">
+            <h1>Our Mission</h1>
+            <p>                DP Fines is a comprehensive, open-source platform tracking global data privacy and protection enforcement actions. We're building the world's most accessible database of regulatory fines and compliance actions to promote transparency and awareness in data protection.
+</p>
         </div>
     </div>
 </section>
 
-<!-- MISSION SECTION -->
-<section class="about-section">
-    <div class="container">
-        <div class="section-content">
-            <h2>Our Mission</h2>
-            <p class="lead-text">
-                DP Fines is a comprehensive, open-source platform tracking global data privacy and protection enforcement actions. We're building the world's most accessible database of regulatory fines and compliance actions to promote transparency and awareness in data protection.
-            </p>
-        </div>
-    </div>
-</section>
 
 <!-- WHAT WE DO -->
 <section class="about-section bg-light">
@@ -33,19 +26,19 @@
         <h2>What We Do</h2>
         <div class="features-grid">
 
-            <div class="feature-box">
+            <div class="feature-box reveal-on-scroll">
                 <div class="feature-icon"><i class="fas fa-search"></i></div>
                 <h3>Track Enforcement Actions</h3>
                 <p>Monitor and catalog fines issued by data protection authorities worldwide</p>
             </div>
 
-            <div class="feature-box">
+            <div class="feature-box reveal-on-scroll">
                 <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
                 <h3>Provide Analytics</h3>
                 <p>Offer insights into enforcement trends, regulatory patterns, and sector-specific compliance issues</p>
             </div>
 
-            <div class="feature-box">
+            <div class="feature-box reveal-on-scroll">
                 <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Empower Compliance Professionals</h3>
                 <p>Give organizations and legal teams the tools to stay informed about global privacy regulations</p>
@@ -62,7 +55,7 @@
 
         <div class="features-list">
 
-            <div class="feature-item">
+            <div class="feature-item reveal-on-scroll">
                 <i class="fas fa-check-circle"></i>
                 <div>
                     <h3>12,500+ Enforcement Actions</h3>
@@ -70,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="feature-item">
+            <div class="feature-item reveal-on-scroll">
                 <i class="fas fa-globe"></i>
                 <div>
                     <h3>Global Coverage</h3>
@@ -78,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="feature-item">
+            <div class="feature-item reveal-on-scroll">
                 <i class="fas fa-book"></i>
                 <div>
                     <h3>Detailed Case Summaries</h3>
@@ -86,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="feature-item">
+            <div class="feature-item reveal-on-scroll">
                 <i class="fas fa-filter"></i>
                 <div>
                     <h3>Advanced Filtering</h3>
@@ -94,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="feature-item">
+            <div class="feature-item reveal-on-scroll">
                 <i class="fas fa-sync-alt"></i>
                 <div>
                     <h3>Regular Updates</h3>
@@ -117,31 +110,31 @@
 
         <div class="reasons-grid">
 
-            <div class="reason-card">
+            <div class="reason-card reveal-on-scroll">
                 <i class="fas fa-briefcase"></i>
                 <h3>Compliance Teams</h3>
                 <p>Staying ahead of regulatory requirements and industry trends</p>
             </div>
 
-            <div class="reason-card">
+            <div class="reason-card reveal-on-scroll">
                 <i class="fas fa-gavel"></i>
                 <h3>Legal Professionals</h3>
                 <p>Researching precedent cases and enforcement patterns</p>
             </div>
 
-            <div class="reason-card">
+            <div class="reason-card reveal-on-scroll">
                 <i class="fas fa-building"></i>
                 <h3>Organizations</h3>
                 <p>Benchmarking their compliance programs against peers</p>
             </div>
 
-            <div class="reason-card">
+            <div class="reason-card reveal-on-scroll">
                 <i class="fas fa-microscope"></i>
                 <h3>Researchers</h3>
                 <p>Studying global privacy trends and regulatory evolution</p>
             </div>
 
-            <div class="reason-card">
+            <div class="reason-card reveal-on-scroll">
                 <i class="fas fa-users"></i>
                 <h3>The Public</h3>
                 <p>Understanding their data protection rights and enforcement</p>
@@ -162,17 +155,17 @@
 
         <div class="principles-grid">
 
-            <div class="principle-item">
+            <div class="principle-item reveal-on-scroll">
                 <h3>Transparency</h3>
                 <p>Transparency in data protection should be met with transparency in enforcement tracking</p>
             </div>
 
-            <div class="principle-item">
+            <div class="principle-item reveal-on-scroll">
                 <h3>Community</h3>
                 <p>Community contributions make our database more comprehensive and accurate</p>
             </div>
 
-            <div class="principle-item">
+            <div class="principle-item reveal-on-scroll">
                 <h3>Accessibility</h3>
                 <p>Compliance information should not be limited to large corporations</p>
             </div>
@@ -202,7 +195,7 @@
 
         <div class="team-grid">
 
-            <div class="team-card">
+            <div class="team-card reveal-on-scroll">
                 <div class="team-image">
                     <img src="https://media.licdn.com/dms/image/v2/D4D03AQEVNoH-1IM1nA/profile-displayphoto-crop_800_800/B4DZmc2TY5JgAI-/0/1759273106365?e=1766016000&v=beta&t=MOSkMDiN0MqiFJKWIMmLtKpndhQjLBo8MGwzTPIjBi0" alt="Abdulmajeed Raji">
                 </div>
@@ -213,7 +206,7 @@
                 </div>
             </div>
 
-            <div class="team-card">
+            <div class="team-card reveal-on-scroll">
                 <div class="team-image">
                     <img src="https://media.licdn.com/dms/image/v2/D4E03AQFNIjpKAoPAFA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698686899979?e=1766016000&v=beta&t=BWAeYTpLAjn_URQkJlRnktgZPUurADcQAMI51Wi78eE" alt="Zainab Oladiti">
                 </div>
@@ -247,7 +240,7 @@
 
         <div class="acknowledgments-list">
 
-            <div class="ack-item">
+            <div class="ack-item reveal-on-scroll">
                 <i class="fas fa-heart"></i>
                 <div>
                     <h3>Global Community</h3>
@@ -255,7 +248,7 @@
                 </div>
             </div>
 
-            <div class="ack-item">
+            <div class="ack-item reveal-on-scroll">
                 <i class="fas fa-institutions"></i>
                 <div>
                     <h3>Regulatory Authorities</h3>
@@ -263,7 +256,7 @@
                 </div>
             </div>
 
-            <div class="ack-item">
+            <div class="ack-item reveal-on-scroll">
                 <i class="fas fa-tools"></i>
                 <div>
                     <h3>Open Source Community</h3>
@@ -271,7 +264,7 @@
                 </div>
             </div>
 
-            <div class="ack-item">
+            <div class="ack-item reveal-on-scroll">
                 <i class="fas fa-lightbulb"></i>
                 <div>
                     <h3>Privacy Advocates</h3>
@@ -292,25 +285,25 @@
 
         <div class="tech-grid">
 
-            <div class="tech-card">
+            <div class="tech-card reveal-on-scroll">
                 <i class="fas fa-server"></i>
                 <h3>Laravel PHP</h3>
                 <p>Robust backend framework for scalable applications</p>
             </div>
 
-            <div class="tech-card">
+            <div class="tech-card reveal-on-scroll">
                 <i class="fas fa-lock"></i>
                 <h3>Security</h3>
                 <p>Secure authentication and data protection standards</p>
             </div>
 
-            <div class="tech-card">
+            <div class="tech-card reveal-on-scroll">
                 <i class="fas fa-database"></i>
                 <h3>Data Collection</h3>
                 <p>Manual entry and scraper workflows for accuracy</p>
             </div>
 
-            <div class="tech-card">
+            <div class="tech-card reveal-on-scroll">
                 <i class="fas fa-users-cog"></i>
                 <h3>Admin Panel</h3>
                 <p>Comprehensive tools for data management and curation</p>
@@ -322,8 +315,8 @@
 
 <!-- CONTACT -->
 <section class="about-section">
-    <div class="container">
-        <h2>Get In Touch</h2>
+        <div class="contact-box reveal-on-scroll">
+            <div class="contact-item reveal-on-scroll">
 
         <p class="lead-text">
             Have questions, suggestions, or want to contribute? We'd love to hear from you.
@@ -331,7 +324,7 @@
 
         <div class="contact-box">
 
-            <div class="contact-item">
+            <div class="contact-item reveal-on-scroll">
                 <i class="fas fa-envelope"></i>
                 <div>
                     <h3>Email</h3>
@@ -361,7 +354,7 @@
             This is more than just a database—it's a community effort to make data protection enforcement transparent and accessible to everyone. Whether you're a developer, legal professional, or privacy advocate, there are many ways to contribute.
         </p>
 
-        <div class="cta-buttons">
+        <div class="cta-buttons reveal-on-scroll">
             <a href="/database" class="btn btn-primary btn-large">
                 <i class="fas fa-database"></i> Explore Database
             </a>

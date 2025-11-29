@@ -2,9 +2,9 @@
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <a href="/index">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>DP Fines</span>
+                <a href="{{ url('/') }}" aria-label="DP Fines home">
+                    <img src="{{ asset('images/dpfines_logo.png') }}" alt="DP Fines logo" class="site-logo"/>
+                    <span class="logo-text">DP Fines</span>
                 </a>
             </div>
 

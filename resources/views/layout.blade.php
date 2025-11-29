@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="{{ asset('images/dpfines_logo.png') }}" type="image/png">
+    @stack('styles')
 </head>
 <body>
 
@@ -19,5 +21,6 @@
 @include('includes.footer')
 
 <script src="{{ asset('js/main.js') }}"></script>
+@stack('scripts')
 </body>
 </html>

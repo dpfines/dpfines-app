@@ -9,7 +9,7 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <div class="hero-text">
+            <div class="hero-text reveal-on-scroll">
                 <h1>Track Global Privacy & Data Protection Fines</h1>
                 <p>Stay updated on enforcement actions and fines from regulators around the world. Monitor compliance trends and protect your organisation.</p>
                 <div class="hero-buttons">
@@ -21,7 +21,7 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image reveal-on-scroll">
                 <div class="stats-box">
                     <div class="stat-number">12,500+</div>
                     <div class="stat-label">Enforcement Actions Tracked</div>
@@ -95,7 +95,7 @@
                 <p class="no-data">No fines found. Add data to your database to see results.</p>
             @else
                 @foreach ($latestFines as $fine)
-                    <div class="fine-card">
+                    <div class="fine-card reveal-on-scroll">
 
                         <div class="fine-org">
                             <h3>{{ $fine->organisation }}</h3>
@@ -151,7 +151,7 @@
         <div class="charts-grid">
 
             {{-- TOP REGULATORS --}}
-            <div class="chart-card">
+            <div class="chart-card reveal-on-scroll">
                 <h3><i class="fas fa-chart-bar"></i> Top Regulators by Enforcement Actions</h3>
 
                 <div class="chart-bars">
@@ -162,9 +162,7 @@
                                 <span>{{ $stat->count }} cases</span>
                             </div>
                             <div class="bar-bg">
-                                <div class="bar-fill"
-                                     style="width: {{ ($stat->count / $regulatorStats[0]->count) * 100 }}%">
-                                </div>
+                                <div class="bar-fill" style="width: {{ $stat->percent }}%"></div>
                             </div>
                         </div>
                     @endforeach
@@ -172,7 +170,7 @@
             </div>
 
             {{-- TOP SECTORS --}}
-            <div class="chart-card">
+            <div class="chart-card reveal-on-scroll">
                 <h3><i class="fas fa-chart-line"></i> Most Fined Sectors</h3>
 
                 <div class="chart-bars">
@@ -183,9 +181,7 @@
                                 <span>{{ $stat->count }} cases</span>
                             </div>
                             <div class="bar-bg">
-                                <div class="bar-fill bar-fill-purple"
-                                     style="width: {{ ($stat->count / $sectorStats[0]->count) * 100 }}%">
-                                </div>
+                                <div class="bar-fill bar-fill-purple" style="width: {{ $stat->percent }}%"></div>
                             </div>
                         </div>
                     @endforeach
@@ -209,7 +205,7 @@
             </div>
 
             <div class="features-list">
-                <div class="feature-item">
+                <div class="feature-item reveal-on-scroll">
                     <div class="feature-icon blue">
                         <i class="fas fa-search"></i>
                     </div>
@@ -219,7 +215,7 @@
                     </div>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-item reveal-on-scroll">
                     <div class="feature-icon indigo">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -229,7 +225,7 @@
                     </div>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-item reveal-on-scroll">
                     <div class="feature-icon green">
                         <i class="fas fa-bell"></i>
                     </div>
@@ -239,7 +235,7 @@
                     </div>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-item reveal-on-scroll">
                     <div class="feature-icon purple">
                         <i class="fas fa-file-alt"></i>
                     </div>
@@ -253,12 +249,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta reveal-on-scroll">
         <div class="container">
             <h2>Stay Ahead of Global Enforcement</h2>
             <p>Join thousands of compliance professionals who trust GlobalFines to stay informed. Sign up for alerts and full database access today.</p>
             <div class="cta-buttons">
-                <a href="database.php" class="btn btn-outline">Explore Database</a>
+                <a href="database" class="btn btn-primary">Explore Database</a>
             </div>
         </div>
     </section>

@@ -32,10 +32,25 @@
             <div class="footer-col">
                 <h4>Newsletter</h4>
                 <p>Get weekly enforcement updates</p>
-                <form action="/newsletter" method="POST" class="newsletter-form">
-                    <input type="email" name="email" placeholder="Your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+
+                <form id="footer-newsletter-form" action="{{ route('newsletter.subscribe') }}"
+      method="POST"
+      class="newsletter-form"
+      id="footer-newsletter-form">
+    @csrf
+    <input type="email" name="email" placeholder="Your email" required>
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+</form>
+
+<div id="footer-success" style="display:none; color: #4ade80; margin-top:10px;">
+    ✔ You are subscribed! Check your inbox.
+</div>
+
+<div id="footer-error" style="display:none; color: #f87171; margin-top:10px;">
+</div>
+
+
+
             </div>
         </div>
 
