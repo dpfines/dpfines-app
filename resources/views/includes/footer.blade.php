@@ -33,21 +33,19 @@
                 <h4>Newsletter</h4>
                 <p>Get weekly enforcement updates</p>
 
-                <form id="footer-newsletter-form" action="{{ route('newsletter.subscribe') }}"
-      method="POST"
-      class="newsletter-form"
-      id="footer-newsletter-form">
-    @csrf
-    <input type="email" name="email" placeholder="Your email" required>
-    <button type="submit" class="btn btn-primary">Subscribe</button>
-</form>
+                <form action="{{ route('newsletter.subscribe') }}" method="POST" class="newsletter-form"
+                    id="footer-newsletter-form">
+                    @csrf
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
 
-<div id="footer-success" style="display:none; color: #4ade80; margin-top:10px;">
-    ✔ You are subscribed! Check your inbox.
-</div>
+                <div id="footer-success" style="display:none; color: #4ade80; margin-top:10px;">
+                    ✔ You are subscribed! Check your inbox.
+                </div>
 
-<div id="footer-error" style="display:none; color: #f87171; margin-top:10px;">
-</div>
+                <div id="footer-error" style="display:none; color: #f87171; margin-top:10px;">
+                </div>
 
 
 
@@ -56,10 +54,12 @@
 
         <div class="footer-bottom">
             <div class="footer-info">
-                <p>&copy; <?php echo date('Y'); ?> Data Protection Fines (DP Fines). All rights reserved. A community-driven open project.</p>
+                <p>&copy; <?php echo date('Y'); ?> Data Protection Fines (DP Fines). All rights reserved. A
+                    community-driven open project.</p>
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/dpfines/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/dpfines/" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -68,4 +68,3 @@
     </div>
 
 </footer>
-
