@@ -68,7 +68,7 @@
                 </div>
 
                 <!-- Submit -->
-                <button type="submit" style="width: 100%; padding: 10px 16px; background: linear-gradient(135deg, #667eea 0%, ##4b5563 100%); color: white; font-size: 14px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                <button type="submit" style="width: 100%; padding: 10px 16px; background: linear-gradient(135deg, #3047af 0%, #4b5563 100%); color: white; font-size: 14px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
                     Sign In
                 </button>
             </form>
@@ -103,7 +103,7 @@
 
         <!-- Footer -->
         <p style="text-align: center; color: white; font-size: 14px;">
-            New admin? <a href="{{ url('/admin/register') }}" style="color: #fbbf24; text-decoration: none; font-weight: 600;">Create account</a>
+            New admin? <a href="{{ url('/admin/register') }}" style="color: #ebebeb; text-decoration: none; font-weight: 600;">Create account</a>
         </p>
     </div>
 </div>

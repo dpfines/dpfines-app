@@ -12,6 +12,8 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    protected $guarded = ['id', 'is_admin'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +23,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_admin',
     ];
 
     /**
@@ -45,6 +46,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'last_login_at' => 'datetime',
             'password' => 'hashed',
+            'is_admin' => 'boolean',
         ];
     }
 
@@ -61,7 +63,8 @@ class User extends Authenticatable
      */
     public function isAdmin(): bool
     {
-        return $this->is_admin === true;
+        return $this->is_admin ;
+        // === true;
     }
 
     /**
