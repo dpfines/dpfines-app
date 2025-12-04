@@ -172,7 +172,8 @@ class AuthController extends Controller
             ]
         );
 
-        Notification::route('mail', $user->email)->notify(new AdminVerifyEmail($signedUrl));
+        Notification::route('mail', $user->email)
+            ->notify(new AdminVerifyEmail($signedUrl, $user));
 
         return back()->with('success', 'Verification link resent. Check your email.');
     }

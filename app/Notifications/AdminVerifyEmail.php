@@ -5,14 +5,16 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
+use App\Models\User;
 
 class AdminVerifyEmail extends Notification
 {
     use Queueable;
 
     protected $url;
+    public $user;
 
-    public function __construct(string $url, string $user)
+    public function __construct(string $url, User $user)
     {
         $this->url = $url;
         $this->user = $user;
