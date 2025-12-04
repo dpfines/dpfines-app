@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px;">
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #4b5563 100%); padding: 20px;">
     <div style="width: 100%; max-width: 420px;">
         <!-- Header -->
         <div style="text-align: center; margin-bottom: 32px; color: white;">
@@ -68,10 +68,37 @@
                 </div>
 
                 <!-- Submit -->
-                <button type="submit" style="width: 100%; padding: 10px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 14px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                <button type="submit" style="width: 100%; padding: 10px 16px; background: linear-gradient(135deg, #667eea 0%, ##4b5563 100%); color: white; font-size: 14px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
                     Sign In
                 </button>
             </form>
+        </div>
+
+        <!-- Resend Verification Section -->
+        <div style="margin-bottom: 20px;">
+            <button type="button" onclick="document.getElementById('resend-form').style.display = document.getElementById('resend-form').style.display === 'none' ? 'block' : 'none';" style="width: 100%; padding: 10px 16px; background: #f3f4f6; color: #374151; font-size: 14px; font-weight: 600; border: 1px solid #d1d5db; border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+                Didn't receive verification email?
+            </button>
+            <div id="resend-form" style="display: none; margin-top: 12px; padding: 16px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px;">
+                <form method="POST" action="{{ route('admin.verification.send') }}">
+                    @csrf
+                    <p style="font-size: 12px; color: #6b7280; margin-bottom: 12px;">Enter your email to receive a new verification link:</p>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="email"
+                               name="email"
+                               placeholder="your@email.com"
+                               value="{{ old('email') }}"
+                               style="flex: 1; padding: 8px 12px; font-size: 12px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; font-family: inherit;"
+                               required>
+                        <button type="submit" style="padding: 8px 16px; background: #667eea; color: white; font-size: 12px; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            Resend
+                        </button>
+                    </div>
+                    @if($errors->has('email'))
+                        <p style="color: #dc2626; font-size: 11px; margin-top: 6px;">{{ $errors->first('email') }}</p>
+                    @endif
+                </form>
+            </div>
         </div>
 
         <!-- Footer -->

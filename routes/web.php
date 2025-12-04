@@ -41,6 +41,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register')->middleware('guest');
     Route::post('/register', [AuthController::class, 'register'])->middleware('guest');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+    
+    // Email verification (signed links)
+    Route::get('/verify-email/{id}/{hash}', [AuthController::class, 'verifyEmail'])
+        ->name('verification.verify')
+        ->middleware('signed');
+
+    Route::post('/email/verification-notification', [AuthController::class, 'resendVerification'])
+        ->name('verification.send')
+        ->middleware('throttle:6,1');
 
     // Protected admin routes
     Route::middleware(['auth', 'admin'])->group(function () {

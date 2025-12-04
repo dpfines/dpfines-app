@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px;">
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #4b5563 100%); padding: 20px;">
     <div style="width: 100%; max-width: 420px;">
         <!-- Header -->
         <div style="text-align: center; margin-bottom: 32px; color: white;">
