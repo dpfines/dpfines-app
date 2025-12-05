@@ -15,6 +15,9 @@ use App\Http\Controllers\Admin\ScrapedFineController;
 
 
 // Public routes
+// Generic login route used by auth middleware (redirects to admin login)
+Route::get('/login', function () { return redirect('/admin/login'); })->name('login');
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
@@ -41,7 +44,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register')->middleware('guest');
     Route::post('/register', [AuthController::class, 'register'])->middleware('guest');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
-    
+
     // Email verification (signed links)
     Route::get('/verify-email/{id}/{hash}', [AuthController::class, 'verifyEmail'])
         ->name('verification.verify')
@@ -54,7 +57,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Protected admin routes
     Route::middleware(['auth', 'admin'])->group(function () {
         // Dashboard
-        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])
+            ->name('dashboard');
 
         // Global Fines CRUD
         Route::resource('fines', AdminGlobalFineController::class);
