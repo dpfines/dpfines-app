@@ -13,12 +13,11 @@
         <a href="{{ route('admin.scraped-fines.index') }}" class="nav-link {{ request()->routeIs('admin.scraped-fines.*') ? 'active' : '' }}"><i class="fa-solid fa-file-import"></i> Scraped Fines</a>
         <a href="{{ route('admin.fines.create') }}" class="nav-link"><i class="fa-solid fa-plus"></i> New Fine</a>
         <a href="{{ route('admin.scraped-fines.index') }}?status=pending" class="nav-link"><i class="fa-solid fa-hourglass-half"></i> Pending Reviews</a>
-        <a href="{{ route('admin.verification.send') }}" class="nav-link"><i class="fa-solid fa-envelope"></i> Resend Verification</a>
     </nav>
 
     <div style="margin-top:1rem;border-top:1px solid rgba(255,255,255,0.04);padding-top:1rem">
-        <form action="{{ route('admin.logout') }}" method="POST">@csrf
-            <button type="submit" class="nav-link" style="background:none;border:none;padding:0;color:inherit"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
+        <form action="{{ route('admin.logout') }}" method="POST" style="width:100%">@csrf
+            <button type="submit" class="nav-link" style="width:100%;justify-content:flex-start"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
         </form>
     </div>
 </aside>

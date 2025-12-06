@@ -4,18 +4,16 @@
 <div class="admin-shell">
     @include('admin._sidebar')
     <main class="container-fluid mt-4">
-    <div class="row mb-4">
-        <div class="col-md-8">
-            <h1>Scraped Fines Review</h1>
-        </div>
-        <div class="col-md-4 text-end">
-            <a href="{{ route('admin.scraped-fines.create') }}" class="btn btn-primary">Submit New</a>
+    <div class="page-header mb-4">
+        <h1>Scraped Fines Review</h1>
+        <div class="actions">
+            <a href="{{ route('admin.scraped-fines.create') }}" class="btn btn-primary">Find New Fines</a>
             <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Dashboard</a>
         </div>
     </div>
 
     @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>

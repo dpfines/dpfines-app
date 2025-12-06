@@ -11,28 +11,24 @@
 @endpush
 
 @section('content')
-<div class="container mt-4">
-    <div class="d-flex align-items-center justify-content-between mb-4">
-        <div>
-            <h2 class="mb-0">Admin Dashboard</h2>
-            <div class="small-muted">Overview of fines & review activity</div>
+<div class="admin-shell">
+    @include('admin._sidebar')
+    <main>
+        <div class="page-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p class="text-muted" style="margin:0">Overview of fines & review activity</p>
+            </div>
         </div>
-        <div class="d-flex align-items-center gap-2">
-            <form action="{{ route('admin.logout') }}" method="POST">
-                @csrf
-                <button class="btn btn-outline-danger">Logout</button>
-            </form>
-        </div>
-    </div>
 
-    @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible">
+                {{ session('success') }}
+                <button type="button" class="btn-close"></button>
+            </div>
+        @endif
 
-    <div class="admin-shell">
-        @include('admin._sidebar')
-        <main>
-    <div class="metrics-grid mb-4">
+        <div class="metrics-grid mb-4">
         <a class="metric-link" href="{{ route('admin.fines.index') }}">
             <div class="metric-card">
             <div class="d-flex justify-content-between align-items-center">
@@ -192,13 +188,13 @@
                 </div>
             </div>
 
-            <div class="card mb-3">
+            {{-- <div class="card mb-3">
                 <div class="card-body">
                     <h6 class="mb-2">System</h6>
-                    <div class="small-muted">PHP: {{ phpversion() }}</div>
-                    <div class="small-muted">Env: {{ app()->environment() }}</div>
+                    <div class="small-muted"> {{  }}</div>
+                    <div class="small-muted">: {{  }}</div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="card">
                 <div class="card-body">

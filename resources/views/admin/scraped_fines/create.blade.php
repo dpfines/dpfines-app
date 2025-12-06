@@ -4,17 +4,15 @@
 <div class="admin-shell">
     @include('admin._sidebar')
     <main class="container-fluid mt-4">
-    <div class="row mb-4">
-        <div class="col-md-8">
-            <h1>Submit Scraped Fine for Review</h1>
-        </div>
-        <div class="col-md-4 text-end">
+    <div class="page-header mb-4">
+        <h1>Submit Scraped Fine for Review</h1>
+        <div class="actions">
             <a href="{{ route('admin.scraped-fines.index') }}" class="btn btn-secondary">Back to List</a>
         </div>
     </div>
 
     @if ($errors->any())
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible">
             <strong>Validation Errors:</strong>
             <ul class="mb-0">
                 @foreach ($errors->all() as $error)
@@ -51,9 +49,15 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="regulator" class="form-label">Regulator</label>
-                        <input type="text" class="form-control @error('regulator') is-invalid @enderror"
-                               id="regulator" name="regulator"
-                               value="{{ old('regulator') }}">
+                        <select id="regulator" name="regulator" class="form-select @error('regulator') is-invalid @enderror">
+                            <option value="">Select regulator...</option>
+                            @foreach([
+                                'ICO (UK)','CNIL (France)','BfDI (Germany)','DPC (Ireland)','AEPD (Spain)',
+                                'FTC (USA)','OAIC (Australia)','OPC (Canada)','CNPD (Luxembourg)'
+                            ] as $r)
+                                <option value="{{ $r }}" {{ old('regulator') == $r ? 'selected' : '' }}>{{ $r }}</option>
+                            @endforeach
+                        </select>
                         @error('regulator')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -103,9 +107,15 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="sector" class="form-label">Sector</label>
-                        <input type="text" class="form-control @error('sector') is-invalid @enderror"
-                               id="sector" name="sector"
-                               value="{{ old('sector') }}">
+                        <select id="sector" name="sector" class="form-select @error('sector') is-invalid @enderror">
+                            <option value="">Select sector...</option>
+                            @foreach([
+                                'Finance & Banking','Healthcare','Technology','Retail & E-commerce','Telecommunications',
+                                'Public Sector','Education','Aviation / Transportation','Social Media'
+                            ] as $s)
+                                <option value="{{ $s }}" {{ old('sector') == $s ? 'selected' : '' }}>{{ $s }}</option>
+                            @endforeach
+                        </select>
                         @error('sector')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -113,9 +123,12 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="region" class="form-label">Region</label>
-                        <input type="text" class="form-control @error('region') is-invalid @enderror"
-                               id="region" name="region"
-                               value="{{ old('region') }}">
+                        <select id="region" name="region" class="form-select @error('region') is-invalid @enderror">
+                            <option value="">Not specified</option>
+                            @foreach(['EU / EEA','USA','Australia','Canada','Global'] as $reg)
+                                <option value="{{ $reg }}" {{ old('region') == $reg ? 'selected' : '' }}>{{ $reg }}</option>
+                            @endforeach
+                        </select>
                         @error('region')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -124,9 +137,12 @@
 
                 <div class="mb-3">
                     <label for="law" class="form-label">Law/Regulation</label>
-                    <input type="text" class="form-control @error('law') is-invalid @enderror"
-                           id="law" name="law"
-                           value="{{ old('law') }}">
+                    <select id="law" name="law" class="form-select @error('law') is-invalid @enderror">
+                        <option value="">Select law...</option>
+                        @foreach(['GDPR','UK GDPR','DPA 2018','CCPA','Other'] as $l)
+                            <option value="{{ $l }}" {{ old('law') == $l ? 'selected' : '' }}>{{ $l }}</option>
+                        @endforeach
+                    </select>
                     @error('law')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -144,9 +160,15 @@
 
                 <div class="mb-3">
                     <label for="violation_type" class="form-label">Violation Type</label>
-                    <input type="text" class="form-control @error('violation_type') is-invalid @enderror"
-                           id="violation_type" name="violation_type"
-                           value="{{ old('violation_type') }}">
+                    <select id="violation_type" name="violation_type" class="form-select @error('violation_type') is-invalid @enderror">
+                        <option value="">Select type...</option>
+                        @foreach([
+                            'Security Breach','Inadequate Security','Consent Issues','Transparency',
+                            'Data Transfer','Unlawful Processing','Childrens Privacy'
+                        ] as $v)
+                            <option value="{{ $v }}" {{ old('violation_type') == $v ? 'selected' : '' }}>{{ $v }}</option>
+                        @endforeach
+                    </select>
                     @error('violation_type')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror

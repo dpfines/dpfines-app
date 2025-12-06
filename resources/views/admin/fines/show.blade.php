@@ -4,11 +4,9 @@
 <div class="admin-shell">
     @include('admin._sidebar')
     <main class="container-fluid mt-4">
-    <div class="row mb-4">
-        <div class="col-md-8">
-            <h1>{{ $fine->organisation }}</h1>
-        </div>
-        <div class="col-md-4 text-end">
+    <div class="page-header mb-4">
+        <h1>{{ $fine->organisation }}</h1>
+        <div class="actions">
             <a href="{{ route('admin.fines.edit', $fine->id) }}" class="btn btn-warning">Edit</a>
             <form action="{{ route('admin.fines.destroy', $fine->id) }}" method="POST" class="d-inline">
                 @csrf @method('DELETE')

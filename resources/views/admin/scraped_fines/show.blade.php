@@ -4,11 +4,9 @@
 <div class="admin-shell">
     @include('admin._sidebar')
     <main class="container-fluid mt-4">
-    <div class="row mb-4">
-        <div class="col-md-8">
-            <h1>{{ $scraped_fine->organisation }}</h1>
-        </div>
-        <div class="col-md-4 text-end">
+    <div class="page-header mb-4">
+        <h1>{{ $scraped_fine->organisation }}</h1>
+        <div class="actions">
             @if($scraped_fine->status === 'pending')
                 <a href="{{ route('admin.scraped-fines.review', $scraped_fine->id) }}" class="btn btn-warning">Review</a>
             @endif
